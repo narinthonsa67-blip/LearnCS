@@ -85,14 +85,14 @@ namespace LearnCS
                     break;
             }
 
-            for (int i = 0; i<5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine($"For loop iteration: {i}");
             }
 
             bool isTrue = true;
             int counter = 0;
-            while (isTrue == true) // isTrue == true
+            while (isTrue == true) 
             {
                 Console.WriteLine("Eternity");
                 if (counter == 10)
@@ -101,17 +101,74 @@ namespace LearnCS
                 }
                 counter++;
             }
-            
+
             foreach (string car in cars)
             {
                 Console.WriteLine($"Car: {car}");
             }
 
             for (int i = 0; i < cars.Length; i++)
-            {  
+            {
                 Console.WriteLine($"Car: {cars[i]}");
             }
 
+
+            string Hello(string name = "Noname")
+            {
+                return $"Hello, {name}!";
+            }
+
+            Console.WriteLine(Hello("John"));
+            Console.WriteLine(Hello());
+
+            void NumberCompare(int x, int y)
+            {
+                if (x > y) Console.WriteLine($"{x} is greater than {y}");
+                else if (x < y) Console.WriteLine($"{x} is less than {y}");
+                else Console.WriteLine($"{x} is equal to {y}");
+            }
+
+            NumberCompare(5, 10);
+
+            List<Player> players = new List<Player>();
+            for (int i = 0; i < 5; i++)
+            {
+                players.Add(new Player());
+            }
+
+            players.Add(new Player("Alice", 5));
+            players.Add(new Player("Bob", 10));
+            players.Add(new Player("Chaelie", 15));
+
+            // Display players
+            foreach (Player pl in players)
+            {
+                Console.WriteLine($"Player: {pl.Name}, Level: {pl.Level}");
+            }
+        }
+    }
+
+    class Player
+    {
+        public string name;
+        public int level;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public int Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+
+        public Player(string name = "Unknown", int level = 1)
+        {
+            this.name = name;
+            this.level = level; 
         }
     }
 }
